@@ -11,7 +11,7 @@ class Grado extends Model
 
     protected $table = "grados";
 
-    protected $primaryKey = "id_grados";
+    protected $primaryKey = "id_grado";
 
     public $timestamps = true;
     

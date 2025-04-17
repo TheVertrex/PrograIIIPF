@@ -22,7 +22,7 @@ return new class extends Migration
 
             $table->foreign('id_sucursal')
             ->references('id_sucursal')
-            ->on('sucursal')
+            ->on('sucursales')
             ->onDelete('cascade');
 
         });
