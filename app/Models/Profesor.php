@@ -16,4 +16,9 @@ class Profesor extends Model
     public $timestamps = true;
 
     protected $fillable = ['nombre','email','telefono','especialidad'] ;
+
+    public function inscripciones()
+    {
+        return $this->hasMany(Inscripcion::class, 'id_profesor');
+    }
 }

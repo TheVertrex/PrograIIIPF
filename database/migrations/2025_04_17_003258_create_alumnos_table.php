@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_alumno');
             $table->string('nombre');
             $table->string('email');
-            $table->string('numero');
+            $table->string('numero', 8);
             $table->string('direccion');
             $table->timestamps();
             $table->unsignedBigInteger('id_sucursal');

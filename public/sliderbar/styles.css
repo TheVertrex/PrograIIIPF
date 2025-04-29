@@ -1,0 +1,351 @@
+/* Variables de tema */
+:root {
+    --sidebar-width: 250px;
+    --topbar-height: 60px;
+    --bg-light: #f5f5f5;
+    --text-light: #333;
+    --sidebar-bg-light: #ffffff;
+    --sidebar-hover-light: #e0e0e0;
+    --submenu-bg-light: #f0f0f0;
+    --border-light: #ddd;
+    --bg-dark: #121212;
+    --text-dark: #f5f5f5;
+    --sidebar-bg-dark: #1e1e1e;
+    --sidebar-hover-dark: #2c2c2c;
+    --submenu-bg-dark: #252525;
+    --border-dark: #333;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Botón para abrir el sidebar */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: var(--light-sidebar-bg);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.dark-mode .toggle-btn {
+    background-color: var(--dark-sidebar-bg);
+}
+
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--sidebar-bg-light);
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-right: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+body.dark-mode .sidebar {
+    background-color: var(--sidebar-bg-dark);
+    border-right: 1px solid var(--border-dark);
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar-header {
+    height: var(--topbar-height);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+body.dark-mode .sidebar-header {
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.toggle-btn {
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 1.2rem;
+}
+
+/* Menú navegación */
+.nav-menu {
+    padding: 10px 0;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+body.dark-mode .nav-link {
+    color: var(--text-dark);
+}
+
+.nav-link:hover {
+    background-color: var(--sidebar-hover-light);
+}
+
+body.dark-mode .nav-link:hover {
+    background-color: var(--sidebar-hover-dark);
+}
+
+.nav-link i {
+    width: 20px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.nav-link span {
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.sidebar.collapsed .nav-link span {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.arrow {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-link.active .arrow {
+    transform: rotate(90deg);
+}
+
+/* Submenús */
+.submenu {
+    list-style: none;
+    background-color: var(--submenu-bg-light);
+    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+body.dark-mode .submenu {
+    background-color: var(--submenu-bg-dark);
+}
+
+.submenu.open {
+    max-height: 500px;
+}
+
+.submenu-item {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submenu-item:hover {
+    background-color: var(--sidebar-hover-light);
+}
+
+body.dark-mode .submenu-item:hover {
+    background-color: var(--sidebar-hover-dark);
+}
+
+.submenu-item i {
+    width: 20px;
+    margin-right: 10px;
+    font-size: 0.8rem;
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 0; /* Elimina el margen izquierdo */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    padding: 0; /* Elimina el relleno */
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    background-image: url('/sliderbar/FotoInicioSolNueva.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body.dark-mode .main-content {
+    background-image: url('/sliderbar/FotoInicioNocheNueva.jpg');
+}
+
+.sidebar.collapsed ~ .main-content {
+    margin-left: 60px;
+}
+
+/* Topbar */
+.topbar {
+    height: var(--topbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: var(--sidebar-bg-light);
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+body.dark-mode .topbar {
+    background-color: var(--sidebar-bg-dark);
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.topbar h2 {
+    margin-left: 60px; /* Incrementa el margen izquierdo para separarlo del botón */
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+}
+
+/* Switch para tema oscuro/claro */
+.theme-switch {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--sidebar-bg-light);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .theme-switch {
+    background-color: var(--sidebar-bg-dark);
+}
+
+.theme-switch i {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .theme-switch i {
+    color: var(--text-dark);
+}
+
+.theme-icon {
+    position: absolute;
+    top: 7px;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+}
+
+.sun {
+    left: 8px;
+    opacity: 1;
+}
+
+.moon {
+    right: 8px;
+    opacity: 0;
+}
+
+.theme-switch.active .sun {
+    opacity: 0;
+}
+
+.theme-switch.active .moon {
+    opacity: 1;
+}
+
+/* Contenido de ejemplo */
+.content-section {
+    background-image: none; /* Elimina el fondo de pantalla */
+    background-color: var(--sidebar-bg-light); /* Restaura el fondo original */
+    color: var(--text-light); /* Restaura el color del texto */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .content-section {
+    background-color: var(--sidebar-bg-dark);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    color: #ffffff; /* Cambia el color del texto a blanco en modo nocturno */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Agrega sombra para mejor visibilidad */
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        overflow: hidden;
+    }
+
+    .sidebar.mobile-open {
+        width: var(--sidebar-width);
+        overflow: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+}

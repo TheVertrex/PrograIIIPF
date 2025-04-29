@@ -16,4 +16,9 @@ class Sucursal extends Model
     public $timestamps = true;
 
     protected $fillable = ['nombre', 'ubicacion'] ;
+
+    public function alumnos()
+    {
+        return $this->hasMany(Alumno::class, 'id_sucursal');
+    }
 }

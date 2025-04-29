@@ -16,4 +16,9 @@ class Grado extends Model
     public $timestamps = true;
     
     protected $fillable = ['nombre'] ;
+
+    public function niveles()
+    {
+        return $this->hasMany(Nivel::class, 'id_grado');
+    }
 }

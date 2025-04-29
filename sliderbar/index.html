@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Navegación Lateral</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <span>DashBoard</span>
+                </div>
+                <div class="toggle-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-submenu="usuarios">
+                        <i class="fas fa-users"></i>
+                        <span>Usuarios</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                    <ul class="submenu" id="usuarios">
+                        <li class="submenu-item">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Agregar Usuario</span>
+                        </li>
+                        <li class="submenu-item">
+                            <i class="fas fa-user-edit"></i>
+                            <span>Editar Usuario</span>
+                        </li>
+                        <li class="submenu-item">
+                            <i class="fas fa-user-slash"></i>
+                            <span>Eliminar Usuario</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-submenu="productos">
+                        <i class="fas fa-box"></i>
+                        <span>Productos</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                    <ul class="submenu" id="productos">
+                        <li class="submenu-item">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Agregar Producto</span>
+                        </li>
+                        <li class="submenu-item">
+                            <i class="fas fa-edit"></i>
+                            <span>Editar Producto</span>
+                        </li>
+                        <li class="submenu-item">
+                            <i class="fas fa-trash-alt"></i>
+                            <span>Eliminar Producto</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-submenu="ventas">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Ventas</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                    <ul class="submenu" id="ventas">
+                        <li class="submenu-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reporte de Ventas</span>
+                        </li>
+                        <li class="submenu-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Estadísticas</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Configuración</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Ayuda</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <div class="topbar">
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <h2>Panel de Administración</h2>
+                <div class="theme-switch">
+                    <i class="fas fa-sun theme-icon sun"></i>
+                    <i class="fas fa-moon theme-icon moon"></i>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Bienvenido al Panel de Administración</h2>
+                <p>Este es un ejemplo de una barra de navegación lateral con menús desplegables y modo oscuro/claro.</p>
+                <p>Características principales:</p>
+                <ul>
+                    <li>Menú lateral colapsable</li>
+                    <li>Submenús desplegables</li>
+                    <li>Cambio entre modo oscuro y claro</li>
+                    <li>Diseño responsive</li>
+                </ul>
+                <p>Puedes hacer clic en el botón de barras en la parte superior del sidebar para colapsar/expandir el menú.</p>
+                <p>También puedes cambiar entre el tema oscuro y claro usando el interruptor en la barra superior.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
