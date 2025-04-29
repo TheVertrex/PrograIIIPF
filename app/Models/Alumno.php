@@ -16,4 +16,14 @@ class Alumno extends Model
     public $timestamps = true;
     
     protected $fillable = ['nombre','email','numero','direccion','id_sucursal'] ;
+
+    public function sucursal()
+    {
+        return $this->belongsTo(Sucursal::class, 'id_sucursal');
+    }
+
+    public function inscripciones()
+    {
+        return $this->hasMany(Inscripcion::class, 'id_alumno');
+    }
 }

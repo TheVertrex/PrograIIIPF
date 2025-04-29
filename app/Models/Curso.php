@@ -16,4 +16,9 @@ class Curso extends Model
     public $timestamps = true;
 
     protected $fillable = ['nombre','descripcion'] ;
+
+    public function inscripciones()
+    {
+        return $this->hasMany(Inscripcion::class, 'id_curso');
+    }
 }

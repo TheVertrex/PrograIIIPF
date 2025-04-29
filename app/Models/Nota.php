@@ -11,9 +11,14 @@ class Nota extends Model
 
     protected $table = "notas";
 
-    protected $primariKey = "id_nota";
+    protected $primaryKey = "id_nota";
 
     public $timestamps = true;
 
     protected $fillable = ['id_inscripcion','punteo','observacion'] ;
+
+    public function inscripcion()
+    {
+        return $this->belongsTo(Inscripcion::class, 'id_inscripcion');
+    }
 }
