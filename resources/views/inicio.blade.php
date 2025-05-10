@@ -68,10 +68,25 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('alumnos.index') }}" class="nav-link">
+                    <a href="#" class="nav-link" data-submenu="submenu-alumnos">
                         <i class="fas fa-users"></i>
                         <span>Alumnos</span>
+                        <i class="fas fa-chevron-down arrow"></i>
                     </a>
+                    <ul class="submenu" id="submenu-alumnos">
+                        <li class="submenu-item">
+                            <a href="{{ route('alumnos.create') }}">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Agregar Alumno</span>
+                            </a>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="{{ route('alumnos.index') }}">
+                                <i class="fas fa-users"></i>
+                                <span>Lista de Alumnos</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('inscripciones.index') }}" class="nav-link">

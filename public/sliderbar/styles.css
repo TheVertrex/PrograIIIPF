@@ -56,13 +56,13 @@ body.dark-mode {
     width: var(--sidebar-width);
     height: 100vh;
     background-color: var(--sidebar-bg-light);
-    position: fixed;
-    left: 0;
+    position: fixed; /* Fija el slidebar en su posición */
     top: 0;
+    left: 0;
     border-right: 1px solid var(--border-light);
     transition: all 0.3s ease;
-    overflow-y: auto;
-    z-index: 1000;
+    overflow-y: auto; /* Permite desplazamiento si el contenido excede la altura */
+    z-index: 1000; /* Asegura que esté por encima del contenido principal */
 }
 
 body.dark-mode .sidebar {
@@ -199,6 +199,27 @@ body.dark-mode .submenu-item:hover {
     width: 20px;
     margin-right: 10px;
     font-size: 0.8rem;
+}
+
+.submenu-item a {
+    text-decoration: none;
+    color: var(--text-light); /* Mismo color que las demás letras del sliderbar */
+    font-size: 0.9rem; /* Mismo tamaño de letra */
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .submenu-item a {
+    color: var(--text-dark); /* Cambia el color del texto en modo nocturno */
+}
+
+body.dark-mode .submenu-item a:hover {
+    background-color: var(--sidebar-hover-dark); /* Cambia el fondo al pasar el mouse en modo nocturno */
+}
+
+.submenu-item a:hover {
+    background-color: var(--sidebar-hover-light); /* Mismo efecto hover */
 }
 
 /* Contenido principal */

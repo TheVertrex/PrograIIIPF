@@ -1,0 +1,73 @@
+/* Estilos para la página /alumnos con tonos oscuros tipo Discord */
+
+/* Modo claro para la página /alumnos */
+
+body {
+    background-color: #ffffff; /* Fondo claro */
+    color: #333333; /* Texto oscuro */
+    transition: all 0.3s ease;
+}
+
+.table {
+    background-color: #ffffff; /* Fondo de tabla claro */
+    border: 1px solid #dddddd; /* Borde claro */
+    color: #333333; /* Texto oscuro */
+}
+
+.btn {
+    background-color: #007bff; /* Azul estándar para botones */
+    color: #ffffff; /* Texto claro */
+    border: none;
+}
+
+a {
+    color: #007bff; /* Azul estándar para enlaces */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Modo oscuro para la página /alumnos con el color del sliderbar */
+
+body.dark-mode {
+    background-color: #1e1e1e; /* Fondo gris oscuro del sliderbar */
+    color: #ffffff; /* Letras blancas */
+}
+
+body.dark-mode .table {
+    background-color: #2c2c2c; /* Fondo de tabla ligeramente más claro */
+    border: 1px solid #333333; /* Borde gris oscuro */
+    color: #ffffff; /* Letras blancas */
+}
+
+body.dark-mode .btn {
+    background-color: #2c2c2c; /* Botón gris oscuro */
+    color: #ffffff; /* Letras blancas */
+}
+
+body.dark-mode a {
+    color: #ffffff; /* Enlaces blancos */
+}
+
+body.dark-mode a:hover {
+    color: #cccccc; /* Blanco más tenue al pasar el mouse */
+}
+
+/* Modo oscuro para el encabezado con color rojo oscuro */
+
+body.dark-mode .topbar {
+    background-color: #8b0000 !important; /* Rojo oscuro para el encabezado */
+    color: #ffffff; /* Letras blancas */
+    border-bottom: 1px solid #333333; /* Borde gris oscuro */
+}
+
+/* Ajuste para el ícono de la luna en modo oscuro */
+body.dark-mode .theme-switch .fa-sun {
+    display: none; /* Oculta el ícono del sol */
+}
+
+body.dark-mode .theme-switch .fa-moon {
+    display: inline; /* Muestra el ícono de la luna */
+}

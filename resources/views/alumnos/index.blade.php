@@ -1,9 +1,7 @@
-@extends('layouts.app')
-
-@section('title', 'Gestión de Alumnos')
+@extends('layouts.sidebar')
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-3">
+<div class="topbar">
     <h1>Gestión de Alumnos</h1>
 </div>
 
@@ -20,7 +18,6 @@
         </tr>
     </thead>
     <tbody>
-        <!-- Aquí se iterarán los alumnos -->
         @foreach ($alumnos as $alumno)
         <tr>
             <td>{{ $alumno->id_alumno }}</td>
